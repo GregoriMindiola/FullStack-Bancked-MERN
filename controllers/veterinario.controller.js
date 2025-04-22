@@ -99,10 +99,9 @@ const comprobarToken = async (req, res) => {
   const tokenValido = await Veterinario.findOne({ token });
 
   if (tokenValido) {
-    //El token es valido, el usuario si existe
-    res, json({ msg: "Tokeb Valido y el usuario si existe" });
+    res.json({ msg: "Token válido y el usuario sí existe" });
   } else {
-    const error = new Error("Token no Valido ");
+    const error = new Error("Token no válido");
     return res.status(400).json({ msg: error.message });
   }
 };
