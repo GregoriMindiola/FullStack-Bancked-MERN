@@ -72,7 +72,7 @@ const auth = async (req, res) => {
     // autenticar
     res.json({ token: generarJWT(usuario.id) });
   } else {
-    const error = new Error("El password es incorecto");
+    const error = new Error("El password es incorrecto");
     return res.status(404).json({ msg: error.message });
   }
 };
